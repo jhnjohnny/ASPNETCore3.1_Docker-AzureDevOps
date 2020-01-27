@@ -35,24 +35,3 @@ steps:
     tags: |
       $(Build.BuildId)
       latest
-
-- task: Docker@2
-displayName: PushA
-  inputs:
-    containerRegistry: 'DockerRegistryJHN'
-    repository: 'APIContagemAzure'
-    command: 'push'
-    tags: |
-      $(Build.BuildId)
-      latest
-
-- task: Docker@2
-  displayName: PushB
-  inputs:
-    containerRegistry: 'DockerRegistryJHN'
-    repository: 'APIContagemAzure'
-    command: 'push'
-    Dockerfile: '**/Dockerfile'
-    tags: |
-      $(Build.BuildId)
-      latest
