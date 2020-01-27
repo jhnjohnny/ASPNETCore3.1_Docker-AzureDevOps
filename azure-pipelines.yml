@@ -27,3 +27,9 @@ steps:
     tags: |
       $(Build.BuildId)
       latest
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'DockerRegistryJHN'
+    command: 'login'
+
