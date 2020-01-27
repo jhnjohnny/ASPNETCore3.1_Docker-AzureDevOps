@@ -27,11 +27,3 @@ steps:
     tags: |
       $(Build.BuildId)
       latest
-
-- script: docker build --no-cache -f Dockerfile -t $(dockerId)/$(imageName) .
-  displayName: 'Building Docker Image'
-
-- script: |
-    docker login
-    docker push $(dockerId)/$(imageName)
-  displayName: 'Sending Image to Docker Hub'
