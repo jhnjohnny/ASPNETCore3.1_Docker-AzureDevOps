@@ -22,7 +22,7 @@ steps:
   displayName: Login to Docker Hub
   inputs:
     command: login
-    containerRegistry: DockerRegistryJHN
+    containerRegistry: 'DockerRegistryJHN'
     repository: 'APIContagemAzure'
 
 - task: Docker@2
