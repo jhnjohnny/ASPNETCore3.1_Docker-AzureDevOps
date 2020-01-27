@@ -37,7 +37,7 @@ steps:
       latest
 
 - task: Docker@2
-displayName: Push 1
+displayName: PushA
   inputs:
     containerRegistry: 'DockerRegistryJHN'
     repository: 'APIContagemAzure'
@@ -47,7 +47,7 @@ displayName: Push 1
       latest
 
 - task: Docker@2
-  displayName: Push 2
+  displayName: PushB
   inputs:
     containerRegistry: 'DockerRegistryJHN'
     repository: 'APIContagemAzure'
