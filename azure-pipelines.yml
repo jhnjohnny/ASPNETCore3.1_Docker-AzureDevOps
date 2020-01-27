@@ -19,6 +19,14 @@ steps:
   displayName: 'Run a multi-line script'
 
 - task: Docker@2
+  displayName: Login to Docker Hub
+  inputs:
+    command: login
+    containerRegistry: DockerRegistryJHN
+    repository: 'APIContagemAzure'
+
+- task: Docker@2
+  displayName: Build and Push
   inputs:
     containerRegistry: 'DockerRegistryJHN'
     repository: 'APIContagemAzure'
@@ -27,13 +35,3 @@ steps:
     tags: |
       $(Build.BuildId)
       latest
-
-- task: Docker@2
-  inputs:
-    containerRegistry: 'DockerRegistryJHN'
-    command: 'login'
-    tags: |
-      docker.io
-      -u="$DOCKER_USERNAME"
-      -p="$DOCKER_PASSWORD"
-
