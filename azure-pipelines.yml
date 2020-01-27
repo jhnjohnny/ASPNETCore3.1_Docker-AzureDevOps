@@ -26,11 +26,32 @@ steps:
     repository: 'APIContagemAzure'
 
 - task: Docker@2
-  displayName: Build and Push
+  displayName: Build
   inputs:
     containerRegistry: 'DockerRegistryJHN'
     repository: 'APIContagemAzure'
     command: 'build'
+    Dockerfile: '**/Dockerfile'
+    tags: |
+      $(Build.BuildId)
+      latest
+
+- task: Docker@2
+displayName: Push 1
+  inputs:
+    containerRegistry: 'DockerRegistryJHN'
+    repository: 'APIContagemAzure'
+    command: 'push'
+    tags: |
+      $(Build.BuildId)
+      latest
+
+- task: Docker@2
+  displayName: Push 2
+  inputs:
+    containerRegistry: 'DockerRegistryJHN'
+    repository: 'APIContagemAzure'
+    command: 'push'
     Dockerfile: '**/Dockerfile'
     tags: |
       $(Build.BuildId)
