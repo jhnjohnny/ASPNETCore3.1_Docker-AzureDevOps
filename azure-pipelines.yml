@@ -23,13 +23,13 @@ steps:
   inputs:
     command: login
     containerRegistry: 'DockerRegistryJHN'
-    repository: 'APIContagemAzure'
+    repository: 'apicontagem_azuredevops'
 
 - task: Docker@2
   displayName: Build
   inputs:
     containerRegistry: 'DockerRegistryJHN'
-    repository: 'APIContagemAzure'
+    repository: 'apicontagem_azuredevops'
     command: 'build'
     Dockerfile: '**/Dockerfile'
     tags: |
