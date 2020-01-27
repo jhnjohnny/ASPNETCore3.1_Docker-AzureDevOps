@@ -33,6 +33,7 @@ steps:
     containerRegistry: 'DockerRegistryJHN'
     command: 'login'
     tags: |
-       -u="$DOCKER_USERNAME" 
-       -p="$DOCKER_PASSWORD"
+      docker.io
+      -u="$DOCKER_USERNAME"
+      -p="$DOCKER_PASSWORD"
 
