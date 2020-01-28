@@ -37,7 +37,11 @@ steps:
       latest
 
 - task: Docker@2
+  displayName: Push
   inputs:
     containerRegistry: 'DockerRegistryJHN'
     repository: 'apicontagem_azuredevops'
     command: 'push'
+    Dockerfile: '**/Dockerfile'
+    tags: |
+      latest
