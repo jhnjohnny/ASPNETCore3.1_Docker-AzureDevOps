@@ -33,4 +33,4 @@ steps:
   inputs:
     azureSubscription: 'Azure for Students Starter (d283f74c-f069-40e8-95b0-6cebd2b89fd5)'
     appName: 'individual-trello'
-    containers: 'jhnjohnny/apicontagem_azuredevops:$(Build.BuildId)'
+    containers: 'jhnjohnny/apicontagem_azuredevops:latest'
