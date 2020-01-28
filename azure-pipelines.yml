@@ -19,24 +19,12 @@ steps:
   displayName: 'Run a multi-line script'
 
 - task: Docker@2
-  displayName: Build
+  displayName: Build and Push
   inputs:
     containerRegistry: 'DockerRegistryJHN'
     repository: 'jhnjohnny/apicontagem_azuredevops'
-    command: 'build'
+    command: 'buildandpush'
     Dockerfile: '**/Dockerfile'
     tags: |
       $(Build.BuildId)
       latest
-
-- task: Docker@2
-  displayName: Push
-  inputs:
-    containerRegistry: 'DockerRegistryJHN'
-    repository: 'jhnjohnny/apicontagem_azuredevops'
-    command: 'push'
-    Dockerfile: '**/Dockerfile'
-    tags: |
-      $(Build.BuildId)
-      latest
-
