@@ -26,11 +26,11 @@ steps:
     repository: 'apicontagem_azuredevops'
 
 - task: Docker@2
-  displayName: Build and Push
+  displayName: Build
   inputs:
     containerRegistry: 'DockerRegistryJHN'
     repository: 'apicontagem_azuredevops'
-    command: 'buildAndPush'
+    command: 'build'
     Dockerfile: '**/Dockerfile'
     tags: |
       $(Build.BuildId)
